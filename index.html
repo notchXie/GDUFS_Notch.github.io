@@ -11,6 +11,7 @@
             text-align: center;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
         header {
             background: #ff6b81;
@@ -18,14 +19,43 @@
             font-size: 2em;
             color: white;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 80px;
+            width: 200px;
+            height: calc(100% - 80px);
+            background: rgba(255, 107, 129, 0.8);
+            padding: 20px;
+            box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .sidebar a:hover {
+            background: rgba(255, 255, 255, 0.5);
         }
         .container {
-            max-width: 800px;
-            margin: 20px auto;
+            max-width: 1000px;
+            margin: 120px auto 20px auto;
             background: white;
             padding: 20px;
             border-radius: 20px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            left: 220px;
         }
         .post {
             background: #ffe5ec;
@@ -44,20 +74,77 @@
             bottom: 0;
             width: 100%;
         }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .btn {
+            background: #ff6b81;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .btn:hover {
+            background: #ff4d67;
+        }
+        .scroll-container {
+            max-height: 600px;
+            overflow-y: auto;
+            border: 2px solid #ff6b81;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 20px 0;
+            background: #fff;
+        }
+        .post img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
     <header>
         🌸 My Cute & Cool Blog 🌸
     </header>
+    <div class="sidebar">
+        <h3>Menu</h3>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Gallery</a>
+        <a href="#">Contact</a>
+    </div>
     <div class="container">
-        <div class="post">
-            <h2>Welcome to my blog!</h2>
-            <p>This is where I share my thoughts, ideas, and adventures. Stay tuned for more!</p>
+        <div class="image-container">
+            <img src="https://via.placeholder.com/600x300" alt="Blog Banner">
         </div>
-        <div class="post">
-            <h2>My First Post</h2>
-            <p>Today I decided to start this blog. Hope you all enjoy reading my posts!</p>
+        <button class="btn" onclick="alert('Welcome to my blog!')">Click Me!</button>
+        <div class="scroll-container">
+            <div class="post">
+                <h2>Welcome to my blog!</h2>
+                <p>This is where I share my thoughts, ideas, and adventures. Stay tuned for more!</p>
+                <img src="https://via.placeholder.com/600x400" alt="Welcome Image">
+            </div>
+            <div class="post">
+                <h2>My First Post</h2>
+                <p>Today I decided to start this blog. Hope you all enjoy reading my posts!</p>
+                <img src="https://via.placeholder.com/600x400" alt="First Post Image">
+            </div>
+            <div class="post">
+                <h2>Exciting News!</h2>
+                <p>Something amazing is coming soon. Stay tuned!</p>
+                <img src="https://via.placeholder.com/600x400" alt="Exciting News Image">
+            </div>
         </div>
     </div>
     <div class="footer">
